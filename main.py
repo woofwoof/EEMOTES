@@ -1,14 +1,26 @@
 def on_button_pressed_a():
     basic.show_leds("""
-        # # . # #
-                # # . # #
+        . . . . .
+                . # . # .
                 . . . . .
-                # . . . .
-                . # # # #
+                # . . . #
+                . # # # .
     """)
     for index in range(3):
         music.play_melody("C D E F G A B C5 ", 407)
 input.on_button_pressed(Button.A, on_button_pressed_a)
+
+def on_sound_loud():
+    basic.show_leds("""
+        # # # # #
+                . . . # .
+                . . # . .
+                . # . . .
+                # # # # #
+    """)
+    music.play_melody("F G A F F G A F ", 120)
+    music.play_melody("A B C5 A B C5 - - ", 120)
+input.on_sound(DetectedSound.LOUD, on_sound_loud)
 
 def on_button_pressed_ab():
     basic.show_leds("""
